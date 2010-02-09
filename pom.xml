@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.yuroyoro</groupId>
+  <artifactId>squire</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+  <name>squire</name>
+  <description>
+  </description>
+  <licenses>
+    <license>
+      <name>the Apache License, ASL Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>yuroyoro</id>
+      <name>Tomohito Ozaki</name>
+      <timezone>+9</timezone>
+      <email>helmettomo [at] gmail.com</email>
+    </developer>
+  </developers>
+
+  <properties>
+    <scala.version>2.7.7</scala.version>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </repository>
+    <repository>
+      <id>com.twitter</id>
+      <name>com.twitter</name>
+      <url>http://www.lag.net/nest/</url>
+    </repository>
+    <repository>
+      <id>lag.net</id>
+      <name>lag.net</name>
+      <url>http://www.lag.net/repo/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </pluginRepository>
+    <pluginRepository>
+        <id>mc-release</id>
+        <name>Local Maven repository of releases</name>
+        <url>http://mc-repo.googlecode.com/svn/maven2/releases</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>${scala.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-compiler</artifactId>
+      <version>${scala.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-tools.testing</groupId>
+      <artifactId>specs</artifactId>
+      <version>1.4.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.twitter</groupId>
+        <artifactId>querulous</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>src/main/scala</sourceDirectory>
+    <testSourceDirectory>src/test/scala</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.scala-tools</groupId>
+        <artifactId>maven-scala-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <scalaVersion>${scala.version}</scalaVersion>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
